@@ -14,10 +14,12 @@ public class MainActivity extends AppCompatActivity {
 
     //num1; num2; btnMais; btnMenos; btnMulti; btnDivisao; cmpresposta; btnMemoria1; btnMemoria2; btnMemoria3; btnMemoria4; btnMemoria5; btnFinalizar;
 
-    ImageButton btnMais, btnMenos, btnMulti, btnDivisao, btnMemoria1, btnMemoria2, btnMemoria3, btnMemoria4, btnMemoria5;
+    ImageButton btnMais, btnMenos, btnMulti, btnDivisao, btnMemoriaMais, btnMemoriaMenos, btnMemoriaMostra, btnMemoriaArmazena, btnMemoriaLimpa;
 
-    TextView num1, num2, cmpresposta;
+    TextView num1, num2, cmpresposta, cmpmemoria;
     double resposta = 0;
+    double memoria = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +43,14 @@ public class MainActivity extends AppCompatActivity {
         btnMulti = findViewById(R.id.btnMulti);
         btnDivisao = findViewById(R.id.btnDivisao);
 
-        btnMemoria1 = findViewById(R.id.btnMemoria1);
-        btnMemoria2 = findViewById(R.id.btnMemoria2);
-        btnMemoria3 = findViewById(R.id.btnMemoria3);
-        btnMemoria4 = findViewById(R.id.btnMemoria4);
-        btnMemoria5 = findViewById(R.id.btnMemoria5);
+        btnMemoriaMais = findViewById(R.id.btnMemoriaMais);
+        btnMemoriaMenos = findViewById(R.id.btnMemoriaMenos);
+        btnMemoriaMostra = findViewById(R.id.btnMemoriaMostra);
+        btnMemoriaArmazena = findViewById(R.id.btnMemoriaArmazena);
+        btnMemoriaLimpa = findViewById(R.id.btnMemoriaLimpa);
 
         cmpresposta = findViewById(R.id.cmpresposta);
+        cmpmemoria = findViewById(R.id.cmpmemoria);
 
         btnMais.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,18 +100,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        btnMemoria1.setOnClickListener(new View.OnClickListener() {
+        btnMemoriaMais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 double a = Double.parseDouble(num1.getText().toString());
-                double b = Double.parseDouble(num2.getText().toString());
-                resposta = a / b;
-                String respostaFinal = String.valueOf(resposta);
-                cmpresposta.setText(respostaFinal);
-                resposta = 0;
+                memoria = memoria + a;
             }
         });
-        */
+
+        btnMemoriaMenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double a = Double.parseDouble(num1.getText().toString());
+                memoria = memoria - a;
+            }
+        });
+
+        btnMemoriaMostra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String respostaFinal = String.valueOf(memoria);
+                cmpmemoria.setText(respostaFinal);
+            }
+        });
+
+        btnMemoriaArmazena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double a = Double.parseDouble(num1.getText().toString());
+                memoria = a;
+            }
+        });
+
+        btnMemoriaLimpa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                memoria = 0;
+            }
+        });
     }
 }
