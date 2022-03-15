@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    //num1; num2; btnMais; btnMenos; btnMulti; btnDivisao; cmpresposta; btnMemoria1; btnMemoria2; btnMemoria3; btnMemoria4; btnMemoria5; btnFinalizar;
+    //num1; num2; btnMais; btnMenos; btnMulti; btnDivisao; cmpresposta; btnMemoria1; btnMemoria2; btnMemoria3; btnMemoria4; btnMemoria5; btnFinalizar btnHistorico;
 
     ImageButton btnMais, btnMenos, btnMulti, btnDivisao, btnMemoriaMais, btnMemoriaMenos, btnMemoriaMostra, btnMemoriaArmazena, btnMemoriaLimpa;
 
@@ -26,15 +26,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnFinalizar = (Button) findViewById(R.id.btnFinalizar);
-
-        btnFinalizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.exit(0);
-            }
-        });
-
         num1 = findViewById(R.id.num1);
         num2 = findViewById(R.id.num2);
 
@@ -43,14 +34,23 @@ public class MainActivity extends AppCompatActivity {
         btnMulti = findViewById(R.id.btnMulti);
         btnDivisao = findViewById(R.id.btnDivisao);
 
-        btnMemoriaMais = findViewById(R.id.btnMemoriaMais);
-        btnMemoriaMenos = findViewById(R.id.btnMemoriaMenos);
-        btnMemoriaMostra = findViewById(R.id.btnMemoriaMostra);
-        btnMemoriaArmazena = findViewById(R.id.btnMemoriaArmazena);
-        btnMemoriaLimpa = findViewById(R.id.btnMemoriaLimpa);
+        Button btnFinalizar = (Button) findViewById(R.id.btnFinalizar);
+        Button btnHistorico = (Button) findViewById(R.id.btnHistorico);
+        Button btnMemoriaMais = (Button) findViewById(R.id.btnMemoriaMais);
+        Button btnMemoriaMenos = (Button) findViewById(R.id.btnMemoriaMenos);
+        Button btnMemoriaMostra = (Button) findViewById(R.id.btnMemoriaMostra);
+        Button btnMemoriaArmazena = (Button) findViewById(R.id.btnMemoriaArmazena);
+        Button btnMemoriaLimpa = (Button) findViewById(R.id.btnMemoriaLimpa);
 
         cmpresposta = findViewById(R.id.cmpresposta);
         cmpmemoria = findViewById(R.id.cmpmemoria);
+
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.exit(0);
+            }
+        });
 
         btnMais.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 double a = Double.parseDouble(num1.getText().toString());
                 memoria = memoria + a;
+                String respostaFinal = String.valueOf(memoria);
+                cmpmemoria.setText(respostaFinal);
             }
         });
 
@@ -113,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 double a = Double.parseDouble(num1.getText().toString());
                 memoria = memoria - a;
+                String respostaFinal = String.valueOf(memoria);
+                cmpmemoria.setText(respostaFinal);
             }
         });
 
@@ -129,6 +133,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 double a = Double.parseDouble(num1.getText().toString());
                 memoria = a;
+                String respostaFinal = String.valueOf(memoria);
+                cmpmemoria.setText(respostaFinal);
             }
         });
 
@@ -136,7 +142,53 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 memoria = 0;
+                String respostaFinal = String.valueOf(memoria);
+                cmpmemoria.setText(respostaFinal);
             }
         });
     }
 }
+
+/*
+TELA PRINCIPAL
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button btnOutraTela = (Button) findViewById(R.id.btnOutraTela);
+
+        btnOutraTela.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent novaTela = new Intent(getApplicationContext(), OutraTela.class);
+                startActivity(novaTela);
+            }
+        });
+    }
+}
+
+TELA SECUNDÁRIA
+public class OutraTela extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_outra_tela);
+
+        Button btnVoltar = (Button) findViewById(R.id.btnVoltar);
+
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.exit(0);
+            }
+        });
+
+    }
+}
+
+*/

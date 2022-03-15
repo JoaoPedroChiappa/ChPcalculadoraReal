@@ -10,18 +10,18 @@
         android:id="@+id/cmpmemoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="88dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
+        app:layout_constraintBottom_toTopOf="@+id/btnHistorico"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnFinalizar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="4dp"
         android:text="Finalizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,21 +39,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.513" />
 
-    <ImageButton
-        android:id="@+id/btnMenos"
-        android:layout_width="83dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/cmpresposta"
-        app:layout_constraintEnd_toStartOf="@+id/btnMulti"
-        app:srcCompat="@android:drawable/btn_plus" />
-
     <TextView
         android:id="@+id/txtnum2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="20dp"
         android:text="Número 2:"
         app:layout_constraintBottom_toTopOf="@+id/num2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,64 +54,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="92dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/btnMemoriaMais"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnDivisao"
-        android:layout_width="83dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/cmpresposta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/btn_plus" />
-
-    <ImageButton
-        android:id="@+id/btnMais"
-        android:layout_width="83dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/cmpresposta"
-        app:layout_constraintEnd_toStartOf="@+id/btnMenos"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/btn_plus" />
-
-    <ImageButton
-        android:id="@+id/btnMulti"
-        android:layout_width="83dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/cmpresposta"
-        app:layout_constraintEnd_toStartOf="@+id/btnDivisao"
-        app:srcCompat="@android:drawable/btn_plus" />
-
-    <ImageButton
-        android:id="@+id/btnMemoriaMais"
-        android:layout_width="62dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/cmpmemoria"
-        app:layout_constraintEnd_toStartOf="@+id/btnMemoriaMenos"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/btn_plus" />
-
-    <ImageButton
-        android:id="@+id/btnMemoriaMostra"
-        android:layout_width="62dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/cmpmemoria"
-        app:layout_constraintEnd_toStartOf="@+id/btnMemoriaArmazena"
-        app:srcCompat="@android:drawable/btn_plus" />
 
     <EditText
         android:id="@+id/num1"
@@ -135,26 +72,6 @@
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/btnMemoriaMenos"
-        android:layout_width="62dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/cmpmemoria"
-        app:layout_constraintEnd_toStartOf="@+id/btnMemoriaMostra"
-        app:srcCompat="@android:drawable/btn_plus" />
-
-    <ImageButton
-        android:id="@+id/btnMemoriaLimpa"
-        android:layout_width="62dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/cmpmemoria"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/btn_plus" />
-
     <TextView
         android:id="@+id/txtresposta"
         android:layout_width="13dp"
@@ -163,39 +80,135 @@
         android:text="R:"
         app:layout_constraintBottom_toTopOf="@+id/btnMemoriaMais"
         app:layout_constraintEnd_toStartOf="@+id/cmpresposta"
-        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/num2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/btnMais"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnMemoriaArmazena"
-        android:layout_width="62dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/cmpmemoria"
-        app:layout_constraintEnd_toStartOf="@+id/btnMemoriaLimpa"
-        app:srcCompat="@android:drawable/btn_plus" />
 
     <TextView
         android:id="@+id/txtMemoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="48dp"
         android:text="M:"
-        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
+        app:layout_constraintBottom_toTopOf="@+id/btnHistorico"
         app:layout_constraintEnd_toStartOf="@+id/cmpmemoria"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnMenos"
+        android:layout_width="71dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/cmpresposta"
+        app:layout_constraintEnd_toStartOf="@+id/btnMulti"
+        app:srcCompat="@drawable/subtrair_pequeno" />
+
+    <ImageButton
+        android:id="@+id/btnMais"
+        android:layout_width="71dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/cmpresposta"
+        app:layout_constraintEnd_toStartOf="@+id/btnMenos"
+        app:layout_constraintHorizontal_bias="0.381"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/somar_pequeno" />
+
+    <ImageButton
+        android:id="@+id/btnMulti"
+        android:layout_width="71dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/cmpresposta"
+        app:layout_constraintEnd_toStartOf="@+id/btnDivisao"
+        app:srcCompat="@drawable/multiplicar_pequeno" />
+
+    <ImageButton
+        android:id="@+id/btnDivisao"
+        android:layout_width="71dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/cmpresposta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/dividir_pequeno" />
+
+    <Button
+        android:id="@+id/btnHistorico"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Histórico"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnMemoriaMais"
+        android:layout_width="62dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="40dp"
+        android:text="M+"
+        app:layout_constraintBottom_toTopOf="@+id/cmpmemoria"
+        app:layout_constraintEnd_toStartOf="@+id/btnMemoriaMenos"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnMemoriaMenos"
+        android:layout_width="62dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="40dp"
+        android:text="M-"
+        app:layout_constraintBottom_toTopOf="@+id/cmpmemoria"
+        app:layout_constraintEnd_toStartOf="@+id/btnMemoriaMostra" />
+
+    <Button
+        android:id="@+id/btnMemoriaMostra"
+        android:layout_width="62dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="40dp"
+        android:text="MR"
+        app:layout_constraintBottom_toTopOf="@+id/cmpmemoria"
+        app:layout_constraintEnd_toStartOf="@+id/btnMemoriaArmazena" />
+
+    <Button
+        android:id="@+id/btnMemoriaArmazena"
+        android:layout_width="62dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="40dp"
+        android:text="MS"
+        app:layout_constraintBottom_toTopOf="@+id/cmpmemoria"
+        app:layout_constraintEnd_toStartOf="@+id/btnMemoriaLimpa" />
+
+    <Button
+        android:id="@+id/btnMemoriaLimpa"
+        android:layout_width="62dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
+        android:text="MC"
+        app:layout_constraintBottom_toTopOf="@+id/cmpmemoria"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
