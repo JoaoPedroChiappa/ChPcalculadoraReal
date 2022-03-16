@@ -2,6 +2,7 @@ package com.example.chpcalculadora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     //num1; num2; btnMais; btnMenos; btnMulti; btnDivisao; cmpresposta; btnMemoria1; btnMemoria2; btnMemoria3; btnMemoria4; btnMemoria5; btnFinalizar btnHistorico;
 
-    ImageButton btnMais, btnMenos, btnMulti, btnDivisao, btnMemoriaMais, btnMemoriaMenos, btnMemoriaMostra, btnMemoriaArmazena, btnMemoriaLimpa;
 
-    TextView num1, num2, cmpresposta, cmpmemoria;
     double resposta = 0;
     double memoria = 0;
 
@@ -25,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageButton btnMais, btnMenos, btnMulti, btnDivisao;
+
+        TextView num1, num2, cmpresposta, cmpmemoria;
 
         num1 = findViewById(R.id.num1);
         num2 = findViewById(R.id.num2);
@@ -44,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
         cmpresposta = findViewById(R.id.cmpresposta);
         cmpmemoria = findViewById(R.id.cmpmemoria);
+
+        btnHistorico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent historico = new Intent(getApplicationContext(), ChpHistorico.class);
+                startActivity(historico);
+            }
+        });
 
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,47 +159,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
-/*
-TELA PRINCIPAL
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        Button btnOutraTela = (Button) findViewById(R.id.btnOutraTela);
-
-        btnOutraTela.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent novaTela = new Intent(getApplicationContext(), OutraTela.class);
-                startActivity(novaTela);
-            }
-        });
-    }
-}
-
-TELA SECUNDÁRIA
-public class OutraTela extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_outra_tela);
-
-        Button btnVoltar = (Button) findViewById(R.id.btnVoltar);
-
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.exit(0);
-            }
-        });
-
-    }
-}
-
-*/
