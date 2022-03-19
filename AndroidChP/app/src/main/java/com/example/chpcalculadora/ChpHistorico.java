@@ -15,6 +15,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -47,7 +48,17 @@ public class ChpHistorico extends AppCompatActivity {
         btnApagaHistorico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    FileOutputStream arquivoGravar = openFileOutput("calc.txt", MODE_PRIVATE);
+                    String msg = "";
+                    arquivoGravar.write(msg.getBytes());
+                    arquivoGravar.close();
+                    //Ao invés de chamar o arquivo de novo, passo msg em branco, sabendo que o arquivo foi apagado nas linhas acima.
+                    txtHistorico.setText("");
+                }
+                catch (IOException error){
 
+                }
             }
         });
 
