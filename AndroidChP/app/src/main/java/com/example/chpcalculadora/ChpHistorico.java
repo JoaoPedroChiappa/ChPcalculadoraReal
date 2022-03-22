@@ -2,29 +2,41 @@ package com.example.chpcalculadora;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Date;
+import java.util.Calendar;
 
 public class ChpHistorico extends AppCompatActivity {
+
+    /*
+    Calendar cal = Calendar.getInstance();
+    int year = cal.get(Calendar.YEAR);
+    int month = cal.get(Calendar.MONTH);
+    int day = cal.get(Calendar.DAY_OF_MONTH);
+    String data = year + "/" + (month+1) + "/" + day;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new
+                FileReader("calc.txt"));
+        String linha;
+        while ((linha = br.readLine()) != null) {
+            if(linha == data);
+        }
+
+        br.close();
+    }
+    */
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
