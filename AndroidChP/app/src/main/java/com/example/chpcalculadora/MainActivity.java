@@ -10,18 +10,22 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Date;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
 
     //num1; num2; btnMais; btnMenos; btnMulti; btnDivisao; cmpresposta; btnMemoria1; btnMemoria2; btnMemoria3; btnMemoria4; btnMemoria5; btnFinalizar btnHistorico;
 
-    private Date data = new Date();
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Brazil/Brasilia"));
+    int year = cal.get(Calendar.YEAR);
+    int month = cal.get(Calendar.MONTH);
+    int day = cal.get(Calendar.DAY_OF_MONTH);
+    String data = year + "/" + month + "/" + day;
+
     double resposta = 0;
     double memoria = 0;
     String txthistorico = "";
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 double b = Double.parseDouble(num2.getText().toString());
                 resposta = a + b;
                 String respostaFinal = String.valueOf(resposta);
-                txthistorico = txthistorico + "\n" + data + "\n" + String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(resposta) + "\n";
+                txthistorico = txthistorico + data + "\n" + String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(resposta) + "\n\n";
                 cmpresposta.setText(respostaFinal);
                 resposta = 0;
             }
@@ -97,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 double b = Double.parseDouble(num2.getText().toString());
                 resposta = a - b;
                 String respostaFinal = String.valueOf(resposta);
-                txthistorico =  txthistorico + "\n" + data + "\n" + String.valueOf(a) + " - " + String.valueOf(b) + " = " + String.valueOf(resposta) + "\n";
+                txthistorico =  txthistorico + data + "\n" +  String.valueOf(a) + " - " + String.valueOf(b) + " = " + String.valueOf(resposta) + "\n\n";
                 cmpresposta.setText(respostaFinal);
                 resposta = 0;
             }
@@ -110,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 double b = Double.parseDouble(num2.getText().toString());
                 resposta = a * b;
                 String respostaFinal = String.valueOf(resposta);
-                txthistorico =  txthistorico + "\n" + data + "\n" + String.valueOf(a) + " x " + String.valueOf(b) + " = " + String.valueOf(resposta) + "\n";
+                txthistorico =  txthistorico + data + "\n" +  String.valueOf(a) + " x " + String.valueOf(b) + " = " + String.valueOf(resposta) + "\n\n";
                 cmpresposta.setText(respostaFinal);
                 resposta = 0;
             }
@@ -123,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 double b = Double.parseDouble(num2.getText().toString());
                 resposta = a / b;
                 String respostaFinal = String.valueOf(resposta);
-                txthistorico =  txthistorico + "\n" + data + "\n" + String.valueOf(a) + " / " + String.valueOf(b) + " = " + String.valueOf(resposta) + "\n";
+                txthistorico =  txthistorico + data + "\n" +  String.valueOf(a) + " / " + String.valueOf(b) + " = " + String.valueOf(resposta) + "\n\n";
                 cmpresposta.setText(respostaFinal);
                 resposta = 0;
             }
@@ -135,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 double a = Double.parseDouble(num1.getText().toString());
                 memoria = memoria + a;
                 String respostaFinal = String.valueOf(memoria);
-                txthistorico =  txthistorico + "\n" + data + "\n" + "M+ = " + String.valueOf(a)  + "\n";
+                txthistorico =  txthistorico + data + "\n" +  "M+ = " + String.valueOf(a)  + "\n\n";
                 cmpmemoria.setText(respostaFinal);
             }
         });
@@ -146,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 double a = Double.parseDouble(num1.getText().toString());
                 memoria = memoria - a;
                 String respostaFinal = String.valueOf(memoria);
-                txthistorico = txthistorico + "\n" + data + "\n" + "M- = " + String.valueOf(a)  + "\n";
+                txthistorico = txthistorico + data + "\n" +  "M- = " + String.valueOf(a)  + "\n\n";
                 cmpmemoria.setText(respostaFinal);
             }
         });
@@ -155,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String respostaFinal = String.valueOf(memoria);
-                txthistorico = txthistorico + "\n" + data + "\n" + "MR = " + String.valueOf(memoria)  + "\n";
+                txthistorico = txthistorico + data + "\n" +  "MR = " + String.valueOf(memoria)  + "\n\n";
                 cmpmemoria.setText(respostaFinal);
             }
         });
@@ -166,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
                 double a = Double.parseDouble(num1.getText().toString());
                 memoria = a;
                 String respostaFinal = String.valueOf(memoria);
-                txthistorico = txthistorico + "\n" + data + "\n" + "MS = " + String.valueOf(a)  + "\n";
+                txthistorico = txthistorico + data + "\n" +  "MS = " + String.valueOf(a)  + "\n\n";
                 cmpmemoria.setText(respostaFinal);
             }
         });
@@ -176,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 memoria = 0;
                 String respostaFinal = String.valueOf(memoria);
-                txthistorico = txthistorico + "\n" + data + "\n" + "MC"  + "\n";
+                txthistorico = txthistorico + data + "\n" +  "MC"  + "\n\n";
                 cmpmemoria.setText(respostaFinal);
             }
         });
